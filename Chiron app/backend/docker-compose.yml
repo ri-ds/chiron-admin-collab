@@ -1,0 +1,22 @@
+version: "3"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - CHIRON_AUTH
+    environment:
+      - DB_HOST
+      - DB_USER
+      - DB_PASSWORD
+      - DB_NAME
+      - SQL_ALCHEMY_URI
+      - CROSS_ORIGIN_URL
+    image: hub.research.cchmc.org/chiron/api:${BUILD_TAG}
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 13001:8000
+    restart: always
+    volumes:
+      - /var/www/nginx/chiron-ui.research.cchmc.org:/var/log:rw

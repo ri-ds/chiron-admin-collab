@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: chiron_demo
+    ports:
+      - 54322:5432
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        - CHIRON_AUTH
+    environment:
+      - DB_HOST=db
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=chiron_demo
+      - SQL_ALCHEMY_URI=postgresql://postgres:postgres@db:5432/chiron_demo
+      - CROSS_ORIGIN_URL=http://localhost:3000
+    image: hub.research.cchmc.org/chiron/api:${BUILD_TAG}
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 13001:8000
+    depends_on:
+      - db
+    volumes:
+      - ./backend/static:/var/log
+
+  ui:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - VITE_MUI_KEY
+    image: hub.research.cchmc.org/chiron/ui:${BUILD_NUMBER}
+    ports:
+      - 13000:80
+    depends_on:
+      - api
+volumes:
+  db_data:

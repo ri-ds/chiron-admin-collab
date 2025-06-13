@@ -1,0 +1,14 @@
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+exclude = '''
+/(
+  \.git
+  | migrations
+  | \.pytest_cache
+  | \.idea
+  | \.vscode
+  | \.githooks
+  | htmlcov
+)/
+'''
