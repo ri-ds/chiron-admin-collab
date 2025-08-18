@@ -9,8 +9,22 @@ WORKDIR /code
 RUN apt-get update && \
     apt-get -y install gcc git
 COPY requirements.txt .
-RUN python3 -m pip install -r requirements.txt --no-cache-dir
+# Install CA certs, OpenSSL, and system utilities
+RUN apt-get update && apt-get install -y \
+    ca-certificates \
+    curl \
+    openssl \
+    && update-ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir \
+    --trusted-host pypi.org \
+    --trusted-host files.pythonhosted.org \
+    -r requirements.txt
+RUN python3 -m pip install --upgrade pip
+
 RUN pip install git+https://${CHIRON_AUTH}@github.com/cchmc/is4r-chiron.git@main
+RUN pip install git+https://${CHIRON_AUTH}@github.com/cchmc/is4r-chiron-ontology.git@develop
 RUN apt-get -y remove gcc && \
     apt-get -y auto-remove
 COPY . /code

@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     "corsheaders",
     "demo",
     'oauth2_provider',
+    "patient_models",
+    "ontologies",
 ]
 
 MIDDLEWARE = [
@@ -71,10 +73,10 @@ MIDDLEWARE = [
 #     "django.contrib.messages.middleware.MessageMiddleware",
 #     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 #     # "demo.middleware.CCHMCHeaderMiddleware",
-
 # ]
 
 ROOT_URLCONF = "demo.urls"
+
 
 TEMPLATES = [
     {
@@ -150,7 +152,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "US/Eastern"
+TIME_ZONE = "America/New_York"
 
 USE_I18N = False
 
@@ -220,7 +222,7 @@ CORS_ALLOW_METHODS = (
     "PUT",
 )
 
-CHIRON_TREAT_ONTOLOGY_CONCEPTS_AS_TEXT = True
+CHIRON_TREAT_ONTOLOGY_CONCEPTS_AS_TEXT = False
 
 # CSRF_TRUSTED_ORIGINS = ['http://localhost:13001', 'http://127.0.0.1:13001']
 # SESSION_COOKIE_SAMESITE = None

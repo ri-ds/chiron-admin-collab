@@ -1,6 +1,6 @@
 # Chiron Admin Collab
 
-A Dockerized deployment of the IS4R-Chiron platform with an updated UI. This application streamlines data management and analysis for IS4R research workflows.
+A Dockerized deployment of the IS4R-Chiron platform with an updated UI. This application streamlines data management and analysis for IS4R research workflows with integrated medical ontology support.
 
 > ⚠️ **Note:** You must have access to the `cchmc` GitHub organization and the private `is4r-chiron` repositories.
 
@@ -17,9 +17,13 @@ A Dockerized deployment of the IS4R-Chiron platform with an updated UI. This app
 
 Follow the steps below to get the platform running locally using Docker.
 
----
+### 1. 📥 Clone Repository
+```bash
+git clone https://github.com/cchmc/is4r-chiron.git
+cd "Chiron app"
+```
 
-### 1. 🔑 Generate a GitHub Personal Access Token
+### 2. 🔑 Generate a GitHub Personal Access Token
 
 1. Go to [GitHub Personal Access Tokens](https://github.com/settings/personal-access-tokens)
 
@@ -38,53 +42,66 @@ Follow the steps below to get the platform running locally using Docker.
    - `Secrets` → **Read-only**
 6. Generate and copy the token
 
----
-
-### 2. ⚙️ Configure the `.env` File
+### 3. ⚙️ Configure the `.env` File
 
 In the root of the `chiron-admin-collab` directory, create a `.env` file:
 
 ```env
 CHIRON_AUTH=your_generated_token_here
-````
+```
 
 This token allows the Docker build to access the private Chiron repository.
 
----
-
-### 3. 🐳 Start the Docker Containers
-
-From your terminal or command prompt, run:
+### 4. 🐳 Start containers and initialize the app (run in order)
 
 ```bash
 BUILD_NUMBER=1 docker-compose up -d
-```
-
-This builds and launches all services in detached mode.
-
----
-
-### 4. ♻️ Restore Project State and Load Data
-
-Run the following commands to initialize the database and load a demo dataset:
-
-```bash
-BUILD_NUMBER=1 docker-compose exec api python manage.py makemigrations
-BUILD_NUMBER=1 docker-compose exec api python manage.py restore_project_state
-BUILD_NUMBER=1 docker-compose exec api python manage.py chiron_run_etl --abbreviated
-```
-
-Select the dataset you'd like to load when prompted.
-
----
-
-### 5. 🔐 Create Superuser for Admin Panel
-
-```bash
+BUILD_NUMBER=1 docker-compose exec api python manage.py migrate
+BUILD_NUMBER=1 docker-compose exec api python manage.py chiron_restore_dd
+BUILD_NUMBER=1 docker-compose exec api python manage.py chiron_restore_dataset dataset3_stored.json
+BUILD_NUMBER=1 docker-compose exec api python manage.py chiron_autocreate_dd
+BUILD_NUMBER=1 docker-compose exec api python manage.py ontology_load --o chiron_config/data/source_data/ontology_source/fyler_test.json
+BUILD_NUMBER=1 docker-compose exec api python manage.py chiron_run_etl
 BUILD_NUMBER=1 docker-compose exec api python manage.py createsuperuser
+
+# (optional, if prompted later or schema updates occur)
+BUILD_NUMBER=1 docker-compose exec api python manage.py makemigrations
+BUILD_NUMBER=1 docker-compose exec api python manage.py migrate
 ```
 
-Create credentials when prompted. You’ll use these to log in to the Django admin site.
+### 5. 👥 Configure User Access
+
+After completing the initialization:
+
+1. **Access Admin Panel**: Go to http://localhost:13001/admin/
+2. **Log in** with the superuser credentials you created
+3. **Create Chiron User**: 
+   - Navigate to "Chiron users" section
+   - Click "Add chiron user"
+   - Link your Django superuser to a new Chiron user
+   - **Grant dataset access** to the datasets of interest
+
+> 📋 **Important**: The superuser must be added as a Chiron user and granted dataset permissions to access the research data interface.
+
+---
+
+## 🧬 Ontology Support
+
+This platform includes medical ontology integration for standardized terminology:
+
+- **Fyler Ontology**: terminology system loaded via `fyler_test.json` ~ WIP
+
+---
+
+## 📊 Testing Datasets
+
+### Datasets that load from fixture with `initialize_dd()`:
+
+- **`dataset2_stored`** *(ontology-enabled)*
+  - Used to test autocreate and ETL from CSV files (subject matching, etc.)
+  - Used in combination with default to test multi-dataset systems handling dataset permissions
+  - Used to test complex subject matching
+  - Used to test some custom ETL processors like detailed age, deid id
 
 ---
 
@@ -116,5 +133,3 @@ chiron-admin-collab/
 ## 📝 License & Access
 
 This project is internal to the CCHMC organization and not intended for public use. For access, usage, or licensing questions, contact the project administrator.
-
----
