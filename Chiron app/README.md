@@ -36,7 +36,7 @@ cd "Chiron app"
 3. Name your token, provide an expiration date
 4. For repository access, choose:
    - **All repositories**, or
-   - **Only select repositories** → Include `cchmc/is4r-chiron`
+   - **Only select repositories** → Include `cchmc/is4r-chiron` and `cchmc/is4r-chiron-ontology`
 5. Under **Permissions**, enable:
    - `Contents` → **Read-only**
    - `Secrets` → **Read-only**
