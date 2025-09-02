@@ -22,7 +22,7 @@ ontology_name_desc = "name of the bioontology.org ontology that the concept is s
 api_source_desc = "name of the api  we are using, either https://data.bioontology.org or https://www.ebi.ac.uk"
 
 
-class OntologyHandler(TextHandler):
+class CustomOntologyHandler(TextHandler):
     def set_kwarg_options(self):
         self.append_handler_arg_option("field_name", field_name_desc, required=True)
         self.append_handler_arg_option("ontology_name", ontology_name_desc, required=True)

@@ -11,11 +11,15 @@
         "auto_access_level": "deid",
         "auto_can_view_workspace": true,
         "auto_can_view_subject_details": true,
+        "list_visible": true,
+        "contact_email": "",
         "override_site_title": null,
         "override_footer_template": "",
         "override_data_summary_function_path": "",
         "override_infobar": "",
-        "override_infobar_type": null
+        "override_infobar_type": null,
+        "logo_url": null,
+        "extra_header_links": null
     },
     "permission_groups": [],
     "default_permission_groups": [],
@@ -102,6 +106,27 @@
     ],
     "concepts": [
         {
+            "id": 482,
+            "permanent_id": "autocreated_encounter_id",
+            "name": "autocreated encounter ID",
+            "name_plural": null,
+            "description": "",
+            "source_id": 67,
+            "concept_handler_id": 47,
+            "collection_id": 33,
+            "category_id": 47,
+            "order": 1.1,
+            "multivalue": true,
+            "published": true,
+            "include_in_cohort_def": true,
+            "include_in_table_def": true,
+            "include_in_analysis_def": true,
+            "has_phi": false,
+            "exclude_from_aggregated": false,
+            "concept_for_prefilter_id": null,
+            "prefilter_mode": "required"
+        },
+        {
             "id": 493,
             "permanent_id": "BASE_ENCOUNTER_COST_tulvsopbpm",
             "name": "BASE_ENCOUNTER_COST",
@@ -133,6 +158,27 @@
             "collection_id": 33,
             "category_id": 47,
             "order": 10.0,
+            "multivalue": true,
+            "published": true,
+            "include_in_cohort_def": true,
+            "include_in_table_def": true,
+            "include_in_analysis_def": true,
+            "has_phi": false,
+            "exclude_from_aggregated": false,
+            "concept_for_prefilter_id": null,
+            "prefilter_mode": "required"
+        },
+        {
+            "id": 756,
+            "permanent_id": "d2_age_at_start",
+            "name": "age at encounter",
+            "name_plural": null,
+            "description": "",
+            "source_id": 67,
+            "concept_handler_id": 48,
+            "collection_id": 33,
+            "category_id": 47,
+            "order": 3.1,
             "multivalue": true,
             "published": true,
             "include_in_cohort_def": true,
@@ -438,48 +484,6 @@
             "prefilter_mode": "required"
         },
         {
-            "id": 482,
-            "permanent_id": "autocreated_encounter_id",
-            "name": "autocreated encounter ID",
-            "name_plural": null,
-            "description": "",
-            "source_id": 67,
-            "concept_handler_id": 47,
-            "collection_id": 33,
-            "category_id": 47,
-            "order": 1.1,
-            "multivalue": true,
-            "published": true,
-            "include_in_cohort_def": true,
-            "include_in_table_def": true,
-            "include_in_analysis_def": true,
-            "has_phi": false,
-            "exclude_from_aggregated": false,
-            "concept_for_prefilter_id": null,
-            "prefilter_mode": "required"
-        },
-        {
-            "id": 756,
-            "permanent_id": "d2_age_at_start",
-            "name": "age at encounter",
-            "name_plural": null,
-            "description": "",
-            "source_id": 67,
-            "concept_handler_id": 48,
-            "collection_id": 33,
-            "category_id": 47,
-            "order": 3.1,
-            "multivalue": true,
-            "published": true,
-            "include_in_cohort_def": true,
-            "include_in_table_def": true,
-            "include_in_analysis_def": true,
-            "has_phi": false,
-            "exclude_from_aggregated": false,
-            "concept_for_prefilter_id": null,
-            "prefilter_mode": "required"
-        },
-        {
             "id": 470,
             "permanent_id": "ADDRESS_cicdjinewc",
             "name": "ADDRESS",
@@ -490,6 +494,27 @@
             "collection_id": 32,
             "category_id": 46,
             "order": 17.0,
+            "multivalue": true,
+            "published": true,
+            "include_in_cohort_def": true,
+            "include_in_table_def": true,
+            "include_in_analysis_def": true,
+            "has_phi": false,
+            "exclude_from_aggregated": false,
+            "concept_for_prefilter_id": null,
+            "prefilter_mode": "required"
+        },
+        {
+            "id": 753,
+            "permanent_id": "autocreated_subject_id",
+            "name": "autocreated ID",
+            "name_plural": null,
+            "description": "",
+            "source_id": 66,
+            "concept_handler_id": 46,
+            "collection_id": 32,
+            "category_id": 46,
+            "order": 1.1,
             "multivalue": true,
             "published": true,
             "include_in_cohort_def": true,
@@ -585,6 +610,27 @@
             "prefilter_mode": "required"
         },
         {
+            "id": 755,
+            "permanent_id": "d2_current_age",
+            "name": "subject age",
+            "name_plural": null,
+            "description": "",
+            "source_id": 66,
+            "concept_handler_id": 49,
+            "collection_id": 32,
+            "category_id": 46,
+            "order": 3.1,
+            "multivalue": true,
+            "published": true,
+            "include_in_cohort_def": true,
+            "include_in_table_def": true,
+            "include_in_analysis_def": true,
+            "has_phi": false,
+            "exclude_from_aggregated": false,
+            "concept_for_prefilter_id": null,
+            "prefilter_mode": "required"
+        },
+        {
             "id": 456,
             "permanent_id": "DEATHDATE_pwedudwsts",
             "name": "DEATHDATE",
@@ -659,6 +705,27 @@
             "category_id": 46,
             "order": 8.0,
             "multivalue": true,
+            "published": true,
+            "include_in_cohort_def": true,
+            "include_in_table_def": true,
+            "include_in_analysis_def": true,
+            "has_phi": false,
+            "exclude_from_aggregated": false,
+            "concept_for_prefilter_id": null,
+            "prefilter_mode": "required"
+        },
+        {
+            "id": 758,
+            "permanent_id": "FYLER",
+            "name": "Fyler",
+            "name_plural": null,
+            "description": "Ontology test",
+            "source_id": 35,
+            "concept_handler_id": 53,
+            "collection_id": 32,
+            "category_id": null,
+            "order": 100.0,
+            "multivalue": false,
             "published": true,
             "include_in_cohort_def": true,
             "include_in_table_def": true,
@@ -820,13 +887,13 @@
             "permanent_id": "MAIDEN_oxgyyvmsqe",
             "name": "MAIDEN",
             "name_plural": null,
-            "description": null,
+            "description": "",
             "source_id": 35,
             "concept_handler_id": 41,
             "collection_id": 32,
             "category_id": 46,
             "order": 11.0,
-            "multivalue": true,
+            "multivalue": false,
             "published": true,
             "include_in_cohort_def": true,
             "include_in_table_def": true,
@@ -1066,48 +1133,6 @@
             "exclude_from_aggregated": false,
             "concept_for_prefilter_id": null,
             "prefilter_mode": "required"
-        },
-        {
-            "id": 753,
-            "permanent_id": "autocreated_subject_id",
-            "name": "autocreated ID",
-            "name_plural": null,
-            "description": "",
-            "source_id": 66,
-            "concept_handler_id": 46,
-            "collection_id": 32,
-            "category_id": 46,
-            "order": 1.1,
-            "multivalue": true,
-            "published": true,
-            "include_in_cohort_def": true,
-            "include_in_table_def": true,
-            "include_in_analysis_def": true,
-            "has_phi": false,
-            "exclude_from_aggregated": false,
-            "concept_for_prefilter_id": null,
-            "prefilter_mode": "required"
-        },
-        {
-            "id": 755,
-            "permanent_id": "d2_current_age",
-            "name": "subject age",
-            "name_plural": null,
-            "description": "",
-            "source_id": 66,
-            "concept_handler_id": 49,
-            "collection_id": 32,
-            "category_id": 46,
-            "order": 3.1,
-            "multivalue": true,
-            "published": true,
-            "include_in_cohort_def": true,
-            "include_in_table_def": true,
-            "include_in_analysis_def": true,
-            "has_phi": false,
-            "exclude_from_aggregated": false,
-            "concept_for_prefilter_id": null,
-            "prefilter_mode": "required"
         }
     ],
     "default_table_def_concepts": [],
@@ -1309,34 +1334,6 @@
             "value": "STUDY_GROUP_C"
         },
         {
-            "id": 758,
-            "concept_id": 753,
-            "name": "input_fields",
-            "data_type": "string",
-            "value": "Id_ujftofurne, SSN_vfbikhyoao"
-        },
-        {
-            "id": 759,
-            "concept_id": 753,
-            "name": "length",
-            "data_type": "integer",
-            "value": "12"
-        },
-        {
-            "id": 762,
-            "concept_id": 755,
-            "name": "field_name",
-            "data_type": "string",
-            "value": "BIRTHDATE_dvsqsuccxv"
-        },
-        {
-            "id": 763,
-            "concept_id": 755,
-            "name": "death_date_field_name",
-            "data_type": "string",
-            "value": "DEATHDATE_pwedudwsts"
-        },
-        {
             "id": 487,
             "concept_id": 482,
             "name": "subcol_fields",
@@ -1456,11 +1453,39 @@
             "value": "REASONDESCRIPTION"
         },
         {
+            "id": 758,
+            "concept_id": 753,
+            "name": "input_fields",
+            "data_type": "string",
+            "value": "Id_ujftofurne, SSN_vfbikhyoao"
+        },
+        {
+            "id": 759,
+            "concept_id": 753,
+            "name": "length",
+            "data_type": "integer",
+            "value": "12"
+        },
+        {
             "id": 760,
             "concept_id": 754,
             "name": "field_name",
             "data_type": "string",
             "value": "Id"
+        },
+        {
+            "id": 762,
+            "concept_id": 755,
+            "name": "field_name",
+            "data_type": "string",
+            "value": "BIRTHDATE_dvsqsuccxv"
+        },
+        {
+            "id": 763,
+            "concept_id": 755,
+            "name": "death_date_field_name",
+            "data_type": "string",
+            "value": "DEATHDATE_pwedudwsts"
         },
         {
             "id": 764,
@@ -1475,6 +1500,20 @@
             "name": "event_date_concept_id",
             "data_type": "string",
             "value": "START_wptpwtchpc"
+        },
+        {
+            "id": 768,
+            "concept_id": 758,
+            "name": "field_name",
+            "data_type": "string",
+            "value": "FYLER"
+        },
+        {
+            "id": 769,
+            "concept_id": 758,
+            "name": "ontology_id",
+            "data_type": "string",
+            "value": "fyler"
         }
     ],
     "source_processor_args": [
@@ -1531,10 +1570,16 @@
     ],
     "concept_concept_dependencies": [
         {
-            "id": 1,
-            "concept_id": 753,
+            "id": 4,
+            "concept_id": 482,
             "depends_on_concept_id": 454,
-            "description": "input for calculated field"
+            "description": "used as input field"
+        },
+        {
+            "id": 3,
+            "concept_id": 482,
+            "depends_on_concept_id": 483,
+            "description": "used as input field"
         },
         {
             "id": 2,
@@ -1543,9 +1588,9 @@
             "description": "input for calculated field"
         },
         {
-            "id": 5,
-            "concept_id": 755,
-            "depends_on_concept_id": 455,
+            "id": 1,
+            "concept_id": 753,
+            "depends_on_concept_id": 454,
             "description": "input for calculated field"
         },
         {
@@ -1555,27 +1600,21 @@
             "description": "input for calculated field"
         },
         {
-            "id": 3,
-            "concept_id": 482,
-            "depends_on_concept_id": 483,
-            "description": "used as input field"
-        },
-        {
-            "id": 4,
-            "concept_id": 482,
-            "depends_on_concept_id": 454,
-            "description": "used as input field"
-        },
-        {
-            "id": 7,
-            "concept_id": 756,
+            "id": 5,
+            "concept_id": 755,
             "depends_on_concept_id": 455,
-            "description": ""
+            "description": "input for calculated field"
         },
         {
             "id": 8,
             "concept_id": 756,
             "depends_on_concept_id": 483,
+            "description": ""
+        },
+        {
+            "id": 7,
+            "concept_id": 756,
+            "depends_on_concept_id": 455,
             "description": ""
         }
     ],
@@ -2224,19 +2263,6 @@
             "description": null
         },
         {
-            "id": 45,
-            "name": "SourceCsv",
-            "required_args": "(oSource, filepath, collection_id_field=None, subject_matching=None, subject_matching_source_id_field=None, subject_matching_source_id_delimiter=None, subject_matching_destination_id_field='id', subject_matching_if_no_match='create', add_subject_ids=None)",
-            "optional_args": "",
-            "is_source_processor": true,
-            "is_etl_processor": false,
-            "is_cohort_def_processor": false,
-            "is_display_processor": false,
-            "is_permission_processor": false,
-            "python_path": "chiron.processors.source.csv.SourceCsv",
-            "description": "\n    Source for CSV. The CSV file needs a header row. The records returned will\n    be Python dicts.\n\n    :param filepath: the file location\n    :type filepath: str\n    :param collection_id_field: the header value for the collection id\n    :type collection_id_field: str\n    :param subject_matching_source_id_field: the header value for the subject collection id\n    :type subject_matching_source_id_field: str\n    "
-        },
-        {
             "id": 46,
             "name": "DisplayBoolean",
             "required_args": "(oUser, oConcept, **kwargs)",
@@ -2248,84 +2274,6 @@
             "is_permission_processor": false,
             "python_path": "chiron.processors.display.boolean.DisplayBoolean",
             "description": "\n    When to use:\n\n    * All values should be true, false, or null\n    "
-        },
-        {
-            "id": 47,
-            "name": "DisplayCategory",
-            "required_args": "(oUser, oConcept, **kwargs)",
-            "optional_args": null,
-            "is_source_processor": false,
-            "is_etl_processor": false,
-            "is_cohort_def_processor": false,
-            "is_display_processor": true,
-            "is_permission_processor": false,
-            "python_path": "chiron.processors.display.category.DisplayCategory",
-            "description": "\n    When to use:\n\n    * All values should either be a string or null\n    * Don't use if too many distinct values, use TextField instead\n    * don't use if no values repeat (like IDs or free-text comments), use TextField instead\n    * don't use if values are longer than one line of text\n\n    "
-        },
-        {
-            "id": 48,
-            "name": "DisplayDate",
-            "required_args": "(oUser, oConcept, **kwargs)",
-            "optional_args": null,
-            "is_source_processor": false,
-            "is_etl_processor": false,
-            "is_cohort_def_processor": false,
-            "is_display_processor": true,
-            "is_permission_processor": false,
-            "python_path": "chiron.processors.display.date.DisplayDate",
-            "description": "\n    When to use:\n\n    * All values should either be a Python datetime object or null\n    * You only care about the date component, typically you will want the time in your\n      datetime values set to 0:00.\n\n    "
-        },
-        {
-            "id": 49,
-            "name": "DisplayDateDeid",
-            "required_args": "(oUser, oConcept, **kwargs)",
-            "optional_args": null,
-            "is_source_processor": false,
-            "is_etl_processor": false,
-            "is_cohort_def_processor": false,
-            "is_display_processor": true,
-            "is_permission_processor": false,
-            "python_path": "chiron.processors.display.date_deid.DisplayDateDeid",
-            "description": "\n    This is a deidentified alternative to the DateFieldProcessor. If you use it in place of the\n    DateFieldProcessor, only the date year is presented to the user.\n\n    Typically, this is used in situations where you want users who can view PHI to see/query the\n    whole date, and other users to see/query only the year. To do this in a concept, you will\n    set has_phi to true and set both cohort_def_processor_deid_alt and display_processor_deid_alt\n    to this.\n\n    If you only ever need to use year, an alternative would be to set only the year in Mongo as an\n    integer and use the NumberFieldProcessor.\n\n    "
-        },
-        {
-            "id": 50,
-            "name": "DisplayNumber",
-            "required_args": "(oUser, oConcept, **kwargs)",
-            "optional_args": null,
-            "is_source_processor": false,
-            "is_etl_processor": false,
-            "is_cohort_def_processor": false,
-            "is_display_processor": true,
-            "is_permission_processor": false,
-            "python_path": "chiron.processors.display.number.DisplayNumber",
-            "description": "\n    When to use:\n\n    * All values should either be numbers or null\n\n    Optional arguments:\n\n    * is_integer: (default: False) set to True if the number has no decimal value.\n      NOTE: This does not round/force numbers to be integers, it only affects how histograms\n      and statistics are calculated/displayed.\n\n    "
-        },
-        {
-            "id": 51,
-            "name": "DisplayText",
-            "required_args": "(oUser, oConcept, **kwargs)",
-            "optional_args": null,
-            "is_source_processor": false,
-            "is_etl_processor": false,
-            "is_cohort_def_processor": false,
-            "is_display_processor": true,
-            "is_permission_processor": false,
-            "python_path": "chiron.processors.display.text.DisplayText",
-            "description": "\n    When to use:\n\n    * All values should either be a string or null\n    * If possible values are a limited number of categories, consider using CategoryField\n    * Good for IDs or free-text comments\n    * Not great for long, multi-line free text - like notes - but shouldn't fail either\n\n    "
-        },
-        {
-            "id": 52,
-            "name": "DisplayTextCustomSort",
-            "required_args": "(oUser, oConcept, **kwargs)",
-            "optional_args": null,
-            "is_source_processor": false,
-            "is_etl_processor": false,
-            "is_cohort_def_processor": false,
-            "is_display_processor": true,
-            "is_permission_processor": false,
-            "python_path": "chiron.processors.display.text_custom_sort.DisplayTextCustomSort",
-            "description": "\n    When to use:\n\n    * Text field where you want the sorting to be different from alphabetical\n    * good for numbers stored as strings, such as ID numbers\n\n    This processor requires the value be stored as a dict with a string display value and a\n    numeric sort value:\n\n    .. code-block:: python\n\n        {\n            \"value\" : \"my value\",\n            \"sort\" : 1\n        }\n    "
         },
         {
             "id": 145,
@@ -2406,19 +2354,6 @@
             "description": "\n    Sorting by code length\n    "
         },
         {
-            "id": 166,
-            "name": "SourceDjangoModel",
-            "required_args": "(oSource, app, model, collection_id_field='pk', subject_matching=None, subject_matching_source_id_field=None, subject_matching_destination_id_field='id', subject_matching_if_no_match='create', add_subject_ids=None, max_batch_size=10000, select_related='', prefetch_related='', filter_rules='{}')",
-            "optional_args": null,
-            "is_source_processor": true,
-            "is_etl_processor": false,
-            "is_cohort_def_processor": false,
-            "is_display_processor": false,
-            "is_permission_processor": false,
-            "python_path": "chiron.processors.source.django.SourceDjangoModel",
-            "description": "\n    A source processor that reads from a Django model.\n\n    :param app: the Django app name where the model is located\n    :type app: str\n    :param model: the Django model name\n    :type model: str\n    :param collection_id_field: The name of the field where the collection_id is located\n    :type collection_id_field: str, optional (default is primary key for model)\n    :param subject_matching_source_id_field: The name of the field where the root_collection_id\n      is located\n    :type subject_matching_source_id_field: str, optional (default is the collection_id_field\n      parameter value)\n    :param max_batch_size: The maximum number of model records that will be loaded at once\n    :type max_batch_size: int, optional (default=10,000)\n    :param select_related: A comma separated list of models to pre-select\n    :type select_related: str, optional\n    :param prefetch_related: A comma separated list of models to pre-fetch\n    :type prefetch_related: str, optional\n    :param filter_rules: A JSON string of Django filter rules to limit model records returned\n    :type filter_rules: JSON str, optional (default is all records are returned)\n    "
-        },
-        {
             "id": 233,
             "name": "SourceSelf",
             "required_args": "(oSource)",
@@ -2443,38 +2378,124 @@
             "is_permission_processor": false,
             "python_path": "chiron.processors.source.self_subdoc.SourceSelfSubdoc",
             "description": "\n    SourceSelfSubdoc for systems using RDBMS instead of Mongodb\n    "
+        },
+        {
+            "id": 47,
+            "name": "DisplayCategory",
+            "required_args": "(oUser, oConcept, **kwargs)",
+            "optional_args": null,
+            "is_source_processor": false,
+            "is_etl_processor": false,
+            "is_cohort_def_processor": false,
+            "is_display_processor": true,
+            "is_permission_processor": false,
+            "python_path": "chiron.processors.display.category.DisplayCategory",
+            "description": "\n    When to use:\n\n    * All values should either be a string or null\n    * Don't use if too many distinct values, use TextField instead\n    * don't use if no values repeat (like IDs or free-text comments), use TextField instead\n    * don't use if values are longer than one line of text\n\n    "
+        },
+        {
+            "id": 48,
+            "name": "DisplayDate",
+            "required_args": "(oUser, oConcept, **kwargs)",
+            "optional_args": null,
+            "is_source_processor": false,
+            "is_etl_processor": false,
+            "is_cohort_def_processor": false,
+            "is_display_processor": true,
+            "is_permission_processor": false,
+            "python_path": "chiron.processors.display.date.DisplayDate",
+            "description": "\n    When to use:\n\n    * All values should either be a Python datetime object or null\n    * You only care about the date component, typically you will want the time in your\n      datetime values set to 0:00.\n\n    "
+        },
+        {
+            "id": 49,
+            "name": "DisplayDateDeid",
+            "required_args": "(oUser, oConcept, **kwargs)",
+            "optional_args": null,
+            "is_source_processor": false,
+            "is_etl_processor": false,
+            "is_cohort_def_processor": false,
+            "is_display_processor": true,
+            "is_permission_processor": false,
+            "python_path": "chiron.processors.display.date_deid.DisplayDateDeid",
+            "description": "\n    This is a deidentified alternative to the DateFieldProcessor. If you use it in place of the\n    DateFieldProcessor, only the date year is presented to the user.\n\n    Typically, this is used in situations where you want users who can view PHI to see/query the\n    whole date, and other users to see/query only the year. To do this in a concept, you will\n    set has_phi to true and set both cohort_def_processor_deid_alt and display_processor_deid_alt\n    to this.\n\n    If you only ever need to use year, an alternative would be to set only the year in Mongo as an\n    integer and use the NumberFieldProcessor.\n\n    "
+        },
+        {
+            "id": 50,
+            "name": "DisplayNumber",
+            "required_args": "(oUser, oConcept, **kwargs)",
+            "optional_args": null,
+            "is_source_processor": false,
+            "is_etl_processor": false,
+            "is_cohort_def_processor": false,
+            "is_display_processor": true,
+            "is_permission_processor": false,
+            "python_path": "chiron.processors.display.number.DisplayNumber",
+            "description": "\n    When to use:\n\n    * All values should either be numbers or null\n\n    Optional arguments:\n\n    * is_integer: (default: False) set to True if the number has no decimal value.\n      NOTE: This does not round/force numbers to be integers, it only affects how histograms\n      and statistics are calculated/displayed.\n\n    "
+        },
+        {
+            "id": 51,
+            "name": "DisplayText",
+            "required_args": "(oUser, oConcept, **kwargs)",
+            "optional_args": null,
+            "is_source_processor": false,
+            "is_etl_processor": false,
+            "is_cohort_def_processor": false,
+            "is_display_processor": true,
+            "is_permission_processor": false,
+            "python_path": "chiron.processors.display.text.DisplayText",
+            "description": "\n    When to use:\n\n    * All values should either be a string or null\n    * If possible values are a limited number of categories, consider using CategoryField\n    * Good for IDs or free-text comments\n    * Not great for long, multi-line free text - like notes - but shouldn't fail either\n\n    "
+        },
+        {
+            "id": 52,
+            "name": "DisplayTextCustomSort",
+            "required_args": "(oUser, oConcept, **kwargs)",
+            "optional_args": null,
+            "is_source_processor": false,
+            "is_etl_processor": false,
+            "is_cohort_def_processor": false,
+            "is_display_processor": true,
+            "is_permission_processor": false,
+            "python_path": "chiron.processors.display.text_custom_sort.DisplayTextCustomSort",
+            "description": "\n    When to use:\n\n    * Text field where you want the sorting to be different from alphabetical\n    * good for numbers stored as strings, such as ID numbers\n\n    This processor requires the value be stored as a dict with a string display value and a\n    numeric sort value:\n\n    .. code-block:: python\n\n        {\n            \"value\" : \"my value\",\n            \"sort\" : 1\n        }\n    "
+        },
+        {
+            "id": 166,
+            "name": "SourceDjangoModel",
+            "required_args": "(oSource, app, model, collection_id_field='pk', subject_matching=None, subject_matching_source_id_field=None, subject_matching_destination_id_field='id', subject_matching_if_no_match='create', add_subject_ids=None, max_batch_size=10000, select_related='', prefetch_related='', filter_rules='{}')",
+            "optional_args": null,
+            "is_source_processor": true,
+            "is_etl_processor": false,
+            "is_cohort_def_processor": false,
+            "is_display_processor": false,
+            "is_permission_processor": false,
+            "python_path": "chiron.processors.source.django.SourceDjangoModel",
+            "description": "\n    A source processor that reads from a Django model.\n\n    :param app: the Django app name where the model is located\n    :type app: str\n    :param model: the Django model name\n    :type model: str\n    :param collection_id_field: The name of the field where the collection_id is located. If not\n      defined, the primary key of the Django model object will be used. If None, a random string\n      will be generated.\n    :type collection_id_field: str\n    :param subject_matching: string for a JSON object that defines the subject matching rule;\n      definable properties are source_id_field, source_id_delimiter, destination_id_field,\n      if_no_match\n    :type subject_matching: json str\n    :param subject_matching_source_id_field: (required if subject_matching not defined) The header\n      value for the subject ID\n    :type subject_matching_source_id_field: str\n    :param subject_matching_source_id_delimiter: If a single CSV entry can list multiple values,\n      the character(s) used to separate values\n    :type subject_matching_source_id_delimiter: str\n    :param subject_matching_destination_id_field: The name of the Chiron subject ID to match. Set\n      to None to use default (\"id\")\n    :type subject_matching_destination_id_field: str\n    :param subject_matching_if_no_match: \"create\" (default) or \"skip\". If the subject ID doesn't\n      match any existing Chiron subjects, do you want to create a new subject or skip this record?\n    :type subject_matching_if_no_match: str\n    :param add_subject_ids: Any additional subject ID values to pull from the record and store\n      with this subject for matching in later sources. Provide a list of JSON objects defining\n      \"source_id_field\" and \"destionation_id_field\".\n    :type add_subject_ids: JSON str\n    :param max_batch_size: The maximum number of model records that will be loaded at once\n    :type max_batch_size: int, optional (default=10,000)\n    :param select_related: A comma separated list of models to pre-select\n    :type select_related: str, optional\n    :param prefetch_related: A comma separated list of models to pre-fetch\n    :type prefetch_related: str, optional\n    :param filter_rules: A JSON string of Django filter rules to limit model records returned\n    :type filter_rules: JSON str, optional (default is all records are returned)\n    "
+        },
+        {
+            "id": 45,
+            "name": "SourceCsv",
+            "required_args": "(oSource, filepath, collection_id_field=None, subject_matching=None, subject_matching_source_id_field=None, subject_matching_source_id_delimiter=None, subject_matching_destination_id_field='id', subject_matching_if_no_match='create', add_subject_ids=None, delimiter=',', encoding='utf-8')",
+            "optional_args": "",
+            "is_source_processor": true,
+            "is_etl_processor": false,
+            "is_cohort_def_processor": false,
+            "is_display_processor": false,
+            "is_permission_processor": false,
+            "python_path": "chiron.processors.source.csv.SourceCsv",
+            "description": "\n    Source for CSV. The CSV file needs a header row. The records returned will\n    be Python dicts.\n\n    :param filepath: (required) the file location\n    :type filepath: str\n    :param collection_id_field: the header value for the collection ID, or None to use a random\n      string\n    :param subject_matching: string for a JSON object that defines the subject matching rule;\n      definable properties are source_id_field, source_id_delimiter, destination_id_field,\n      if_no_match\n    :type subject_matching: json str\n    :param subject_matching_source_id_field: (required if subject_matching not defined) The header\n      value for the subject ID\n    :type subject_matching_source_id_field: str\n    :param subject_matching_source_id_delimiter: If a single CSV entry can list multiple values,\n      the character(s) used to separate values\n    :type subject_matching_source_id_delimiter: str\n    :param subject_matching_destination_id_field: The name of the Chiron subject ID to match. Set\n      to None to use default (\"id\")\n    :type subject_matching_destination_id_field: str\n    :param subject_matching_if_no_match: \"create\" (default) or \"skip\". If the subject ID doesn't\n      match any existing Chiron subjects, do you want to create a new subject or skip this record?\n    :type subject_matching_if_no_match: str\n    :type collection_id_field: str\n    :param add_subject_ids: Any additional subject ID values to pull from the record and store\n      with this subject for matching in later sources. Provide a list of JSON objects defining\n      \"source_id_field\" and \"destionation_id_field\".\n    :type add_subject_ids: JSON str\n    "
         }
     ],
     "concept_handlers": [
+        {
+            "id": 46,
+            "name": "AutoSubjectIdHandler",
+            "python_path": "chiron.processors.concept_handlers.special_concept_handlers.AutoSubjectIdHandler",
+            "description": "\n    Generates a deidentified subject ID using other attributes as input.\n\n    - The value won't change even on rerun of the ETL (as long as the underlying inputs don't\n      change).\n    - Uses asymmetric encryption. Uses the SECRET_KEY in Django settings as a salt value to prevent\n      brute force attempts to re-identify.\n\n    Create a deidentified ID from an identified ID such as MRN or SSN:\n\n    - Use the identified ID as input.\n\n    Create a doubly deidentified ID (twice removed from identifying information):\n\n    - Use an already deidentified ID (such as a study ID) as input.\n\n    Create a deidentified ID when no usable ID is available:\n\n    - Use any combination of fields that you're confident will uniquely identify a patient.\n    - For example, last name and DOB would probably be sufficient on a small group of patients.\n    - Use fields with stable values. If the input values change, this ID will also change.\n\n    :input_fields: (str) A comma separated list of field name(s) to use as input\n    :length: (int, default=10) How many values in your output string (must be an even number).\n    "
+        },
         {
             "id": 10,
             "name": "EncCostAsStringHandler",
             "python_path": "chiron_config.processors.EncCostAsStringHandler",
             "description": null
-        },
-        {
-            "id": 11,
-            "name": "NameHandler",
-            "python_path": "chiron_config.processors.NameHandler",
-            "description": null
-        },
-        {
-            "id": 12,
-            "name": "LabCodeCustomSortHandler",
-            "python_path": "chiron_config.processors.LabCodeCustomSortHandler",
-            "description": null
-        },
-        {
-            "id": 36,
-            "name": "IntegerHandler",
-            "python_path": "chiron.processors.concept_handlers.standard_concept_handlers.IntegerHandler",
-            "description": "\n    Import and use an integer value.\n\n    - Works with any source that returns an array of dicts.\n    - If the input is not an integer, attempts to cast/round it to an integer\n    - Any value that can't be cast/round to an integer will be stored as null.\n\n    :param field_name: the key name of the integer field in the input dict\n    :type field_name: str\n    :param string_val_separator: if the input field can be a string with multiple values,\n      what character(s) should the string be parsed on?\n    :type string_val_separator: str, optional\n    "
-        },
-        {
-            "id": 37,
-            "name": "FloatHandler",
-            "python_path": "chiron.processors.concept_handlers.standard_concept_handlers.FloatHandler",
-            "description": "\n    Import and use a float value.\n\n    - Works with any source that returns an array of dicts.\n    - If the input is not a float, attempts to cast it to an float\n    - Any value that can't be cast to a float will be stored as null.\n\n    :param field_name: the key name of the float field in the input dict\n    :type field_name: str\n    :param string_val_separator: if the input field can be a string with multiple values,\n      what character(s) should the string be parsed on?\n    :type string_val_separator: str, optional\n    "
         },
         {
             "id": 38,
@@ -2525,16 +2546,22 @@
             "description": "\n    Use to load age detailed age fields from a list of dicts.\n\n    - Age should either be year float (where decimal portion is a fraction of the year) or age in\n      days.\n    - If you only have the year, you should load it as a regular integer instead.\n\n    :field_name: (str) The field name for the date of birth\n    :source_format: \"age in days\" (default) or \"year float\"\n    "
         },
         {
-            "id": 46,
-            "name": "AutoSubjectIdHandler",
-            "python_path": "chiron.processors.concept_handlers.special_concept_handlers.AutoSubjectIdHandler",
-            "description": "\n    Generates a deidentified subject ID using other attributes as input.\n\n    - The value won't change even on rerun of the ETL (as long as the underlying inputs don't\n      change).\n    - Uses asymmetric encryption. Uses the SECRET_KEY in Django settings as a salt value to prevent\n      brute force attempts to re-identify.\n\n    Create a deidentified ID from an identified ID such as MRN or SSN:\n\n    - Use the identified ID as input.\n\n    Create a doubly deidentified ID (twice removed from identifying information):\n\n    - Use an already deidentified ID (such as a study ID) as input.\n\n    Create a deidentified ID when no usable ID is available:\n\n    - Use any combination of fields that you're confident will uniquely identify a patient.\n    - For example, last name and DOB would probably be sufficient on a small group of patients.\n    - Use fields with stable values. If the input values change, this ID will also change.\n\n    :input_fields: (str) A comma separated list of field name(s) to use as input\n    :length: (int, default=10) How many values in your output string (must be an even number).\n    "
+            "id": 37,
+            "name": "FloatHandler",
+            "python_path": "chiron.processors.concept_handlers.standard_concept_handlers.FloatHandler",
+            "description": "\n    Import and use a float value.\n\n    - Works with any source that returns an array of dicts.\n    - If the input is not a float, attempts to cast it to an float\n    - Any value that can't be cast to a float will be stored as null.\n\n    :param field_name: the key name of the float field in the input dict\n    :type field_name: str\n    :param string_val_separator: if the input field can be a string with multiple values,\n      what character(s) should the string be parsed on?\n    :type string_val_separator: str, optional\n    "
         },
         {
-            "id": 47,
-            "name": "AutoSubcollectionIdHandler",
-            "python_path": "chiron.processors.concept_handlers.special_concept_handlers.AutoSubcollectionIdHandler",
-            "description": "\n    Generates a deidentified subcollection ID using other attributes as input.\n\n    - The value won't change even on rerun of the ETL (as long as the underlying inputs don't\n      change).\n    - Uses asymmetric encryption. Uses the SECRET_KEY in Django settings as a salt value to prevent\n      brute force attempts to re-identify.\n\n    Create a deidentified ID from an identified ID such as Epic Encounter CSN:\n\n    - Use the identified ID as input.\n\n    Create a deidentified ID when no usable ID is available:\n\n    - Use any combination of fields that you're confident will uniquely identify a record.\n    - For example, could use procedure_name and visit_date for a procedure record assuming that\n      nobody can have 2 of the same procedure on the same date.\n    - Use fields with stable values. If the input values change, this ID will also change.\n\n    :subcol_fields: (str) A comma sep list of field name(s) in this collection to use as input\n    :subject_fields: (str) A comma sep list of field name(s) in the subject collection to use\n      as input\n    :length: (int, default=10) How many values in your output string (must be an even number).\n    "
+            "id": 11,
+            "name": "NameHandler",
+            "python_path": "chiron_config.processors.NameHandler",
+            "description": null
+        },
+        {
+            "id": 12,
+            "name": "LabCodeCustomSortHandler",
+            "python_path": "chiron_config.processors.LabCodeCustomSortHandler",
+            "description": null
         },
         {
             "id": 48,
@@ -2555,16 +2582,34 @@
             "description": "\n    Copies a chiron subject ID field used for matching (stored in `_ids`) into a concept.\n    Typically these fields are only used internally, so this is a way to make them available to\n    users.\n\n    - Must be used with source processor SourceSelf, and this source must be run after any sources\n      that populate the subject ID field.\n    - The value will be converted to a string.\n    "
         },
         {
+            "id": 52,
+            "name": "CurrentAgeHandler",
+            "python_path": "chiron.processors.concept_handlers.standard_concept_handlers.CurrentAgeHandler",
+            "description": "\n    Import an integer or float to get a deidentified current age.\n\n    - Will convert to an age integer if stored as float or string\n    - Any ages over 89 will be converted to a category \"90 and above\"\n    - integers are stored internally as {\"num\": val, \"val\": val} and categories are stored\n      as {\"txt\": val, \"val\": val}\n\n    :param field_name: the key name of the integer field in the input dict\n    :type field_name: str\n    :param string_val_separator: if the input field can be a string with multiple values,\n      what character(s) should the string be parsed on?\n    :type string_val_separator: str, optional\n    "
+        },
+        {
             "id": 51,
             "name": "SubjectMatchingToSubjectHyperlinkHandler",
             "python_path": "chiron.processors.concept_handlers.special_concept_handlers.SubjectMatchingToSubjectHyperlinkHandler",
             "description": "\n    Copies a chiron subject ID field used for matching (stored in `_ids`) into a concept.\n    Typically these fields are only used internally, so this is a way to make them available to\n    users. In some contexts, this ID can be used as a hyperlink to go to subject details view.\n\n    - Must be used with source processor SourceSelf, and this source must be run after any sources\n      that populate the subject ID field.\n    - The value will be converted to a string.\n    "
         },
         {
-            "id": 52,
-            "name": "CurrentAgeHandler",
-            "python_path": "chiron.processors.concept_handlers.standard_concept_handlers.CurrentAgeHandler",
-            "description": "\n    Import an integer or float to get a deidentified current age.\n\n    - Will convert to an age integer if stored as float or string\n    - Any ages over 89 will be converted to a category \"90 and above\"\n    - integers are stored internally as {\"num\": val, \"val\": val} and categories are stored\n      as {\"txt\": val, \"val\": val}\n\n    :param field_name: the key name of the integer field in the input dict\n    :type field_name: str\n    :param string_val_separator: if the input field can be a string with multiple values,\n      what character(s) should the string be parsed on?\n    :type string_val_separator: str, optional\n    "
+            "id": 53,
+            "name": "OntologyHandler",
+            "python_path": "chiron.processors.concept_handlers.special_concept_handlers.OntologyHandler",
+            "description": "\n        Use with an ontology code field as the source. And you will need to provide the ontology\n        ID. This integrates with the ontology Django app, which must be installed in your Django\n        project and must have the corresponding ontologies loaded.\n        "
+        },
+        {
+            "id": 36,
+            "name": "IntegerHandler",
+            "python_path": "chiron.processors.concept_handlers.standard_concept_handlers.IntegerHandler",
+            "description": "\n    Import and use an integer value.\n\n    - Works with any source that returns an array of dicts.\n    - If the input is not an integer, attempts to cast/round it to an integer\n    - Any value that can't be cast/round to an integer will be stored as null.\n\n    :param field_name: the key name of the integer field in the input dict\n    :type field_name: str\n    :param string_val_separator: if the input field can be a string with multiple values,\n      what character(s) should the string be parsed on?\n    :type string_val_separator: str, optional\n    "
+        },
+        {
+            "id": 47,
+            "name": "AutoSubcollectionIdHandler",
+            "python_path": "chiron.processors.concept_handlers.special_concept_handlers.AutoSubcollectionIdHandler",
+            "description": "\n    Generates a deidentified subcollection ID using other attributes as input.\n\n    - The value won't change even on rerun of the ETL (as long as the underlying inputs don't\n      change).\n    - Uses asymmetric encryption. Uses the SECRET_KEY in Django settings as a salt value to prevent\n      brute force attempts to re-identify.\n\n    Create a deidentified ID from an identified ID such as Epic Encounter CSN:\n\n    - Use the identified ID as input.\n\n    Create a deidentified ID when no usable ID is available:\n\n    - Use any combination of fields that you're confident will uniquely identify a record.\n    - For example, could use procedure_name and visit_date for a procedure record assuming that\n      nobody can have 2 of the same procedure on the same date.\n    - Use fields with stable values. If the input values change, this ID will also change.\n\n    :subcol_fields: (str) A comma sep list of field name(s) in this collection to use as input\n    :subject_fields: (str) A comma sep list of field name(s) in the subject collection to use\n      as input\n    :length: (int, default=10) How many values in your output string (must be an even number).\n    "
         }
     ]
 }

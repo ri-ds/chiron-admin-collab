@@ -6,7 +6,7 @@ class EtlName(EtlProcessor):
     display full name but sort by last name
     """
 
-    def pull_record_data_from_source(self, record):
+    def pull_concept_value_from_record(self, record):
         val = str(record.get("NAME", ""))
         last = val.split(" ")[-1]
         response = {
@@ -21,7 +21,7 @@ class EtlEncCostAsString(EtlProcessor):
     Store as text but sort as string
     """
 
-    def pull_record_data_from_source(self, record):
+    def pull_concept_value_from_record(self, record):
         val = record.get("BASE_ENCOUNTER_COST", "")
         if val is None or val == "":
             return None
@@ -37,7 +37,7 @@ class EtlLabCodeCustomSort(EtlProcessor):
     Sorting by code length
     """
 
-    def pull_record_data_from_source(self, record):
+    def pull_concept_value_from_record(self, record):
         val = record.get("VALUE", "")
         if val is None or val == "":
             return None

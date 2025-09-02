@@ -1,5 +1,5 @@
 from chiron.processors import (
-    ProcessorRegistry,
+    # ProcessorRegistry,
     get_built_in_standard_concept_handlers,
 )
 
@@ -11,7 +11,16 @@ from .source_admission import SourceAdmission
 from .source_procedure import SourceProcedure
 from .source_biospecimen import SourceBiospecimen
 
-from .handlers.ontology import OntologyHandler
+
+
+from .handlers.ontology import CustomOntologyHandler
+
+from chiron.processors.registration import ProcessorRegistry
+from .etl_processors import EtlName, EtlEncCostAsString, EtlLabCodeCustomSort
+
+from chiron.processors.abstract import ConceptHandler
+from chiron.processors import CohortDefTextCustomSort, DisplayTextCustomSort, SourceCsv
+
 
 ProcessorRegistry.register(
     [
@@ -25,17 +34,9 @@ ProcessorRegistry.register(
     ],
     get_built_in_standard_concept_handlers(),
 )
+from .handlers.ontology import CustomOntologyHandler
 
-ProcessorRegistry.register([], [OntologyHandler])
-
-
-
-from chiron.processors.registration import ProcessorRegistry
-from .etl_processors import EtlName, EtlEncCostAsString, EtlLabCodeCustomSort
-
-from chiron.processors.abstract import ConceptHandler
-from chiron.processors import CohortDefTextCustomSort, DisplayTextCustomSort, SourceCsv
-
+ProcessorRegistry.register([], [CustomOntologyHandler])
 
 class EncCostAsStringHandler(ConceptHandler):
     display_name = "text with custom sort"
@@ -117,3 +118,11 @@ ProcessorRegistry.register(
         LabCodeCustomSortHandler,
     ],
 )
+
+
+
+
+
+
+
+

@@ -63,7 +63,9 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     "django.contrib.auth.middleware.AuthenticationMiddleware",    
     "django.contrib.messages.middleware.MessageMiddleware",    
-    "django.middleware.clickjacking.XFrameOptionsMiddleware"]
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "chiron.middleware.view_as_other_user.ViewAsOtherUser"
+    ]
 #     "corsheaders.middleware.CorsMiddleware",
 #     "django.middleware.common.CommonMiddleware","django.middleware.security.SecurityMiddleware",
 #     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -152,18 +154,20 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "America/New_York"
+TIME_ZONE = "UTC"
 
 USE_I18N = False
 
 USE_TZ = False
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
 STATIC_ROOT = "/var/log/static"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -172,6 +176,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 TEMPLATES[0]["OPTIONS"]["context_processors"].append("chiron.context_processors.chiron_globals")
 CHIRON_DATABASE = "postgres"
+# CHIRON_POSTGRES_SCHEMA_NAME_PREPEND = "temp_test"  # important to prevent name clashes
 
 
 CHIRON_SQL_ALCHEMY_CONNECTION_STRING = os.getenv(
@@ -197,7 +202,7 @@ CHIRON_PROCESSOR_MODULES = [
     "chiron_config.processors",
 ]
 
-CHIRON_SOURCE_DATA_DIRECTORY = str(BASE_DIR / "chiron_config/") + "/"
+# CHIRON_SOURCE_DATA_DIRECTORY = str(BASE_DIR / "chiron_config/") + "/"
 
 
 # CORS_ALLOWED_ORIGINS = [
@@ -238,3 +243,4 @@ CSRF_TRUSTED_ORIGINS = ['http://localhost']
 CORS_ALLOWED_ORIGINS = [
     "http://localhost",
 ]
+CHIRON_SOURCE_DATA_DIRECTORY = str(BASE_DIR / "chiron_config/data") + "/"

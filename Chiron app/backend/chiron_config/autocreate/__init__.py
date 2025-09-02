@@ -11,35 +11,35 @@ patient_source_list = {
     "list": [
         {
             "unique_source_id": "demographics",
-            "filename": "data/synthea_original/patients.csv",
+            "filename": "synthea_original/patients.csv",
             "load_to_root": True,
             "subject_id_field": "Id",
             "category": "demographics",
         },
         {
             "unique_source_id": "encounters",
-            "filename": "data/synthea_original/encounters.csv",
+            "filename": "synthea_original/encounters.csv",
             "subject_id_field": "PATIENT",
             "collection_id_field": "Id",
         },
         {
             "unique_source_id": "labs",
-            "filename": "data/synthea_original/observations.csv",
+            "filename": "synthea_original/observations.csv",
             "subject_id_field": "PATIENT",
         },
         {
             "unique_source_id": "conditions",
-            "filename": "data/synthea_original/conditions.csv",
+            "filename": "synthea_original/conditions.csv",
             "subject_id_field": "PATIENT",
         },
         {
             "unique_source_id": "procedures",
-            "filename": "data/synthea_original/procedures.csv",
+            "filename": "synthea_original/procedures.csv",
             "subject_id_field": "PATIENT",
         },
         {
             "unique_source_id": "medications",
-            "filename": "data/synthea_original/medications.csv",
+            "filename": "synthea_original/medications.csv",
             "subject_id_field": "PATIENT",
         },
     ],

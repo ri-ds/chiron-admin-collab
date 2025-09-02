@@ -91,8 +91,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"  # other options is BigAutoFie
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": str(os.path.join(BASE_DIR, "db.sqlite3")),
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("DB_NAME", "chiron_demo"),
+        "USER": os.getenv("DB_USER", "postgres"),
+        "PASSWORD": os.getenv("DB_PASSWORD", "postgres"),
+        "HOST": os.getenv("DB_HOST", "db"),
+        "PORT": "5432",
     }
 }
 
@@ -139,6 +143,13 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 TEMPLATES[0]["OPTIONS"]["context_processors"].append("chiron.context_processors.chiron_globals")
 
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "demo.backends.ChironRemoteUserBackend",
+    # "demo.backends.ChironRemoteUserBackend",  # if you have this
+]
+CHIRON_TREAT_ONTOLOGY_CONCEPTS_AS_TEXT = False
+
 CHIRON_SITE_TITLE = "Chiron Test Project"
 CHIRON_INFOBAR = "This is a small dummy database for testing"
 CHIRON_INFOBAR_TYPE = "info"  # affects coloring of infobar, options: info, warning, danger
@@ -147,7 +158,7 @@ CHIRON_SHOW_ANALYSIS_VIEW = True
 CHIRON_AGG_SUBJECT_COUNT_MIN_LIMIT = 5
 CHIRON_USE_CACHES = False
 CHIRON_DATABASE = "postgres"
-CHIRON_SQL_ALCHEMY_CONNECTION_STRING = "postgresql://postgres:postgres@localhost:5432/chiron"
+CHIRON_SQL_ALCHEMY_CONNECTION_STRING = f"postgresql://{os.getenv('DB_USER', 'postgres')}:{os.getenv('DB_PASSWORD', 'postgres')}@{os.getenv('DB_HOST', 'localhost')}:5432/{os.getenv('DB_NAME', 'chiron_demo')}"
 CHIRON_TREAT_ONTOLOGY_CONCEPTS_AS_TEXT = False
 
 LOGIN_REDIRECT_URL = "/"
@@ -158,3 +169,16 @@ try:
     from .settings_custom import *  # noqa
 except ImportError:
     pass
+    
+    
+    
+SESSION_COOKIE_SAMESITE = "Lax"  # or "None" if using HTTPS and cross-site
+SESSION_COOKIE_SECURE = False    # True if using HTTPS in production
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost']
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost",
+]
+
+
+CHIRON_SOURCE_DATA_DIRECTORY = str(BASE_DIR / "chiron_config/data") + "/"

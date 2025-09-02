@@ -374,8 +374,8 @@
     "model": "chiron.concepthandler",
     "pk": 44,
     "fields": {
-        "name": "OntologyHandler",
-        "python_path": "chiron_config.processors.handlers.ontology.OntologyHandler",
+        "name": "CustomOntologyHandler",
+        "python_path": "chiron_config.processors.handlers.ontology.CustomOntologyHandler",
         "description": null
     }
 },
