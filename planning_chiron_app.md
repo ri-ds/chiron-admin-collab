@@ -20,7 +20,7 @@
 
 **new UI**
 - source is stored here in `frontend/`
-- I think we should somehow use the GitHub repo itself, and remove 
+- I think we should somehow use the GitHub repo itself, and remove the source code from here.
 
 **redcap_importer?**
 - Currently not incorporating the redcap_importer tool
