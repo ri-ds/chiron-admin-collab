@@ -19,7 +19,7 @@ Follow the steps below to get the platform running locally using Docker.
 
 ### 1. 📥 Clone Repository
 ```bash
-git clone https://github.com/cchmc/is4r-chiron.git
+git clone https://github.com/ri-ds/chiron-admin-collab.git
 cd "Chiron app"
 ```
 
