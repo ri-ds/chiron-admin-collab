@@ -23,7 +23,7 @@ RUN pip install --no-cache-dir \
     -r requirements.txt
 RUN python3 -m pip install --upgrade pip
 
-RUN pip install git+https://${CHIRON_AUTH}@github.com/cchmc/is4r-chiron.git@main
+RUN pip install git+https://${CHIRON_AUTH}@github.com/cchmc/is4r-chiron.git@feature/data-api2
 RUN pip install git+https://${CHIRON_AUTH}@github.com/cchmc/is4r-chiron-ontology.git@develop
 RUN apt-get -y remove gcc && \
     apt-get -y auto-remove

@@ -1,0 +1,42 @@
+# General Python
+*.pyc
+__pycache__/
+build/
+
+# Python Packaging
+chiron.egg-info/
+dist/
+
+# Mac files
+*.DS_Store
+# IDE Files
+.project
+.settings
+.pydevproject
+# VSCode
+.vscode/
+# JetBrains IDEs such as IntelliJ or PyCharm
+.idea/*
+*.iml
+.fleet/
+
+# docker
+.env
+
+# SQLite
+*.sqlite3
+
+*.sqlite3.backup
+*.sqlite3.old
+
+# Media Directory
+/media
+media/
+
+.coverage
+htmlcov/
+
+# Sphinx documentation
+_build/
+
+venv/
