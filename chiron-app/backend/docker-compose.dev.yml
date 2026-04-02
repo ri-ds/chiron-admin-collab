@@ -1,0 +1,24 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: chiron_demo
+    ports:
+      - 54322:5432
+  api:
+    ports:
+      - 8000:8000
+    volumes:
+      - $PWD:/code:ro
+      - $PWD/static:/var/log
+    environment:
+      DB_HOST: db
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: chiron_demo
+      SQL_ALCHEMY_URI: postgresql://postgres:postgres@db:5432/chiron_demo
+    command: python manage.py runserver 0.0.0.0:8000

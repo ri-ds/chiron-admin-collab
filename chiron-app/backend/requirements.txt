@@ -1,0 +1,8 @@
+black
+Django
+djangorestframework
+Faker
+flake8
+django-cors-headers
+django-crispy-forms
+django-oauth-toolkit

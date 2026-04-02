@@ -1,0 +1,37 @@
+name: Lint and test
+
+on:
+  pull_request:
+    branches: [ "main", "develop" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.11]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Clone chiron
+      uses: actions/checkout@v4
+      with:
+        repository: cchmc/is4r-chiron
+        token: ${{ secrets.CHIRON_AUTH }}
+        path: chiron-src
+        ref: v6.0.2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install ./chiron-src
+    - name: Lint Code and Run Tests
+      env:
+        SECRET_KEY: abc123
+      run: |
+        black --exclude "/.*/migrations/.*|.*/chiron-src/.*/" --check .
+        flake8
